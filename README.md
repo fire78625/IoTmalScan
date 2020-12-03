@@ -22,7 +22,7 @@ System need following dependencies and tools:
 IDA pro needs GUI to output during process. If there is no GUI in your system, it will error when analyze sample.
 Thus, need to install GUI interface package such as X-window ...
 
-## Usage
+## Usage <!!! The server is not working for now. Please do not attempt to upload file>
 upload:
 curl -k https://52.247.210.51:20180/task/upload -F sampleFile=@<sample_path>
 

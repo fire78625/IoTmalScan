@@ -46,7 +46,7 @@ If you want to attempt our system, please contact us and attach your ip address 
 ## Model performance
 
 ### Detection performance
-![]()
+![](https://github.com/fire78625/IoTmalScan/blob/master/result_showing/Figure10.png)
 
 ### Classification performance
-![]()
+![](https://github.com/fire78625/IoTmalScan/blob/master/result_showing/Figure11.png)

@@ -42,3 +42,11 @@ report: {"status":"Success/Failed", "detection":"True/False/None", "classificati
 
 ## Important reminder
 If you want to attempt our system, please contact us and attach your ip address for setting into valid user
+
+## Model performance
+
+### Detection performance
+![]()
+
+### Classification performance
+![]()

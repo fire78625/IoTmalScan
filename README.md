@@ -1,5 +1,14 @@
 # IoTmalScan
 A system can analyze ELF files, and return result including it is malicious or not and its belonging malware family
+Author: Owen Chen, Chin-Wei Tien
+
+## Source category
+
+(1) Source code(/source_code)
+
+(2) Example sample for testing(/testing_sample)
+
+(3) Figure of detection and classification performance(/result_showing)
 
 ## Usage description
 There are 2 Restful APIs which are used to upload sample and lookup the analysis result 

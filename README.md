@@ -10,6 +10,18 @@ Author: Owen Chen, Chin-Wei Tien
 
 (3) Figure of detection and classification performance(/result_showing)
 
+## Introduction 
+
+There are many researches and tools about the malware detection and classification of executable(PE) in Windows platform.
+
+However, there are just a few researches on the executable of Linux-based platform. 
+
+Therefore, we try to make a system to automate detecting a new executable (ELF) is malware or not and classifying its belonging malware family. (If it is judged to be a malware)
+
+## System diagram
+
+![](https://github.com/fire78625/IoTmalScan/blob/master/result_showing/Figure1.png)
+
 ## Usage description
 There are 2 Restful APIs which are used to upload sample and lookup the analysis result 
 

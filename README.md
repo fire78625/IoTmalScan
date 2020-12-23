@@ -22,6 +22,30 @@ Therefore, we try to make a system to automate detecting a new executable (ELF) 
 
 ![](https://github.com/fire78625/IoTmalScan/blob/master/result_showing/Figure1.png)
 
+## Adopted parameters
+
+In our model, we adopted 19 features.
+
+There are 7 normal static features and 12 opcode features which are defined by ourselves.
+
+Static features:
+
+packer:
+
+Isa:
+
+size:
+
+function amount:
+
+external library:
+
+networking:
+
+other ability:
+
+Opcodes categories:
+
 ## Usage description
 There are 2 Restful APIs which are used to upload sample and lookup the analysis result 
 

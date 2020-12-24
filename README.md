@@ -18,7 +18,7 @@ However, there are just a few researches on the executable of Linux-based platfo
 
 Therefore, we try to make a system to automate detecting a new executable (ELF) is malware or not and classifying its belonging malware family. (If it is judged to be a malware)
 
-## System diagram
+## System architecture
 
 ![](https://github.com/fire78625/IoTmalScan/blob/master/result_showing/Figure1.png)
 

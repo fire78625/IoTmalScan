@@ -34,6 +34,10 @@ Static features:
 
 Opcodes categories:
 
+| Type | Type1 | Type2 | Type3 | Type4 | Type5 | Type6 | Type7 | Type8 | Type9 | Type10 | Type11 | Type12 |
+|:-----|:------|:------|:------|:------|:------|:------|:------|:------|:------|:-------|:-------|:-------|
+| Name | Logic | Control and status | Memory | Stack | Procedure | Prefixed |　System I/O | Arithmetic | System | Branch | Execution time | Others |
+
 ## Usage description
 There are 2 Restful APIs which are used to upload sample and lookup the analysis result 
 

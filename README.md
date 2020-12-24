@@ -22,7 +22,7 @@ Therefore, we try to make a system to automate detecting a new executable (ELF) 
 
 ![](https://github.com/fire78625/IoTmalScan/blob/master/result_showing/Figure1.png)
 
-## Adopted parameters
+## Adopted features
 
 In our model, we adopted 19 features.
 

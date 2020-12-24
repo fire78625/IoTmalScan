@@ -30,19 +30,7 @@ There are 7 normal static features and 12 opcode features which are defined by o
 
 Static features:
 
-packer:
-
-Isa:
-
-size:
-
-function amount:
-
-external library:
-
-networking:
-
-other ability:
+![](https://github.com/fire78625/IoTmalScan/blob/master/result_showing/Figure17.png)
 
 Opcodes categories:
 

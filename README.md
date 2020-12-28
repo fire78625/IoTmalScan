@@ -63,6 +63,8 @@ System need the following dependencies and tools:
 6. IDA pro: https://www.hex-rays.com/products/ida/support/download_freeware.shtml
 7. npm: https://www.npmjs.com/package/download
 8. nodejs (version>= 10): https://nodejs.org/zh-tw/download/
+9. Scikit-learn: https://scikit-learn.org/stable/install.html
+10. sqlite3
 
 Notice:
 1. nodejs is ready for building restful server, if you do not use API to use system service and you can ignore the installation
@@ -70,9 +72,33 @@ Notice:
 
 ### Training phase
 
+1. You have to use Extract_feature.py to extract features from sample. Then in the execution process, program will save this features of sample into a database file(.db) which locates in 'database' directory. Please put the training samples into directory 'training_sample' 
 
+#### Executing the following command
+
+*`python3 Extract_feature.py <tool_elfutiles_src_directory_path> <IDA_binary_idaq64_path>`* 
+
+2. Using ML_detection.py to train and save model in the directory 'model' (file format: .h5)
+
+#### Executing the following command to train and save model
+
+*`python3 ML_detection.py <features_storage_database_name>`*
 
 ### Testing phase
+
+Using elf_analysis_activate.py to generate testing result
+
+#### Executing the following command [please execute program with root privilege to make sure tools has enough privilege]
+
+*`sudo python3 elf_analysis_activate.py <sample_name(sha256_value)> <tool_elfutiles_src_directory_path> <IDA_binary_idaq64_path>`*
+
+Ex: sudo python3 elf_analysis_activate.py Desktop/examplevalue Desktop/elfutils/src/ Desktop/IDA/
+
+response format: array [sha256_value, detection_result, classification_result]
+
+response explaination: 
+1. detection_result: {0,1| 0: not malware, 1: malware}
+2. classification_result: {malware family name or 'benign'}
 
 ## Usage description
 There are 2 Restful APIs which are used to upload sample and lookup the analysis result 
@@ -80,22 +106,6 @@ There are 2 Restful APIs which are used to upload sample and lookup the analysis
 upload: upload sample to system
 
 report: lookup analysis result
-
-System need following dependencies and tools:
-1. Python3 (version>= 3.5.2): https://www.python.org/
-2. Radare2: https://rada.re/r/
-3. elfutils: https://sourceware.org/elfutils/
-4. Yara-Rules: https://github.com/Yara-Rules/rules
-5. Tensorflow: https://www.tensorflow.org/
-6. IDA pro: https://www.hex-rays.com/products/ida/support/download_freeware.shtml
-7. npm: https://www.npmjs.com/package/download
-8. nodejs (version>= 10): https://nodejs.org/zh-tw/download/
-9. mysql: https://www.mysqltutorial.org/install-mysql-ubuntu/
-10. Scikit-learn: https://scikit-learn.org/stable/install.html
-
-### Notice
-IDA pro needs GUI to output during process. If there is no GUI in your system, it will error when analyze sample.
-Thus, need to install GUI interface package such as X-window ...
 
 ## Usage <!!! The server is not working for now. Please do not attempt to upload file>
 upload:

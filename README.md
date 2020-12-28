@@ -38,6 +38,42 @@ Opcodes categories:
 |:-----:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:-------:|:-------:|:-------:|
 | Name | Logic | Control and status | Memory | Stack | Procedure | Prefixed |　System I/O | Arithmetic | System | Branch | Execution time | Others |
 
+## Model performance
+
+In our system, there are 2 different models which are used to detect and classify the unknown input separately.
+
+As the following figures shows, our models have great performance in detection and classification.
+
+### Detection performance
+![](https://github.com/fire78625/IoTmalScan/blob/master/result_showing/Figure10.png)
+
+### Classification performance
+![](https://github.com/fire78625/IoTmalScan/blob/master/result_showing/Figure11.png)
+
+## Experimental enviroment setting
+
+Operation System: Ubuntu 16.04 LTS Client (or at least Linux-based system recommended)
+
+System need the following dependencies and tools:
+1. Python3 (version>= 3.5.2): https://www.python.org/
+2. Radare2: https://rada.re/r/
+3. elfutils: https://sourceware.org/elfutils/
+4. Yara-Rules: https://github.com/Yara-Rules/rules
+5. Tensorflow: https://www.tensorflow.org/
+6. IDA pro: https://www.hex-rays.com/products/ida/support/download_freeware.shtml
+7. npm: https://www.npmjs.com/package/download
+8. nodejs (version>= 10): https://nodejs.org/zh-tw/download/
+
+Notice:
+1. nodejs is ready for building restful server, if you do not use API to use system service and you can ignore the installation
+2. Your selected environment should own the GUI interface for the processing of IDA pro command. If there is no GUI, the system will encounter an error.
+
+### Training phase
+
+
+
+### Testing phase
+
 ## Usage description
 There are 2 Restful APIs which are used to upload sample and lookup the analysis result 
 
@@ -54,6 +90,8 @@ System need following dependencies and tools:
 6. IDA pro: https://www.hex-rays.com/products/ida/support/download_freeware.shtml
 7. npm: https://www.npmjs.com/package/download
 8. nodejs (version>= 10): https://nodejs.org/zh-tw/download/
+9. mysql: https://www.mysqltutorial.org/install-mysql-ubuntu/
+10. Scikit-learn: https://scikit-learn.org/stable/install.html
 
 ### Notice
 IDA pro needs GUI to output during process. If there is no GUI in your system, it will error when analyze sample.
@@ -80,10 +118,3 @@ report: {"status":"Success/Failed", "detection":"True/False/None", "classificati
 ## Important reminder
 If you want to attempt our system, please contact us and attach your ip address for setting into valid user
 
-## Model performance
-
-### Detection performance
-![](https://github.com/fire78625/IoTmalScan/blob/master/result_showing/Figure10.png)
-
-### Classification performance
-![](https://github.com/fire78625/IoTmalScan/blob/master/result_showing/Figure11.png)

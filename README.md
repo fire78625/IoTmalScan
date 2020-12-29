@@ -61,15 +61,12 @@ System need the following dependencies and tools:
 4. Yara-Rules: https://github.com/Yara-Rules/rules
 5. Tensorflow: https://www.tensorflow.org/
 6. IDA pro: https://www.hex-rays.com/products/ida/support/download_freeware.shtml
-7. npm: https://www.npmjs.com/package/download
-8. nodejs (version>= 10): https://nodejs.org/zh-tw/download/
-9. Scikit-learn: https://scikit-learn.org/stable/install.html
-10. sqlite3
+7. Scikit-learn: https://scikit-learn.org/stable/install.html
+8. sqlite3
 
 Notice:
-1. nodejs is ready for building restful server, if you do not use API to use system service and you can ignore the installation
-2. Your selected environment should own the GUI interface for the processing of IDA pro command. If there is no GUI, the system will encounter an error.
-3. Tools such as elfutils and IDA pro need to setting to the environment variable of your OS, so that program can call the program in their directories
+1. Your selected environment should own the GUI interface for the processing of IDA pro command. If there is no GUI, the system will encounter an error.
+2. Tools such as elfutils and IDA pro need to setting to the environment variable of your OS, so that program can call the program in their directories
 
 ### Training phase
 

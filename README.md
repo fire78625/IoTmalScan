@@ -73,9 +73,9 @@ Notice:
 
 ### Training phase
 
-1. You have to use Extract_feature.py to extract features from sample. Then in the execution process, program will save this features of sample into a database file(.db) which locates in 'database' directory. Please put the training samples into directory 'training_sample'. Besides, you have to execute label.py before Extract_feature.py to acquire the label of training samples
+1. You have to use Extract_feature.py to extract features from sample. Then in the execution process, program will save this features of sample into a database file(.db) which locates in 'database' directory. Please put the training samples into directory 'training_sample'. Besides, you have to execute label.py before Extract_feature.py to acquire the label of training samples for detection 
 
-#### Executing the following command to generate a label file [data format: csv, output: A file whose name is training_label.txt]
+#### Executing the following command to generate a detection label file [data format: csv, output: A file whose name is training_label.txt in IoTmalScan directory]
 
 *`python3 label.py <malware_indicator> <sample_path>`*
 
@@ -85,11 +85,18 @@ malware_indicator:{0,1|0: benign sample, 1: malware sample}
 
 sample_path: the (malware/benign) sample saving path
 
-#### Executing the following command
+#### Label of classification
 
-*`python3 Extract_feature.py <tool_elfutiles_src_directory_path> <IDA_binary_idaq64_path> <features_storage_database_name>`*
+1. You have to download the reports of training samples from VirusTotal
+2. You have to filter the results of these three AV vendors: "BitDefender", "ESET-NOD32", and "MicroWorld-eScan" and decide the family name (=label of classification)
+3. The results should save as the format like 'samplename,familyname' for each sample in each line 
+4. The final result label file should put in the directory 'VTreport'
 
-Ex: python3 Extract_feature.py /home/username/Desktop/elfutils/ /home/username/Desktop/IDA/ feature_saving.db
+#### Executing the following command [please execute program with root privilege to make sure tools has enough privilege]
+
+*`sudo python3 Extract_feature.py <tool_elfutiles_src_directory_path> <IDA_binary_idaq64_path> <features_storage_database_name> <classification_label_file_name>`*
+
+Ex: sudo python3 Extract_feature.py /home/username/Desktop/elfutils/ /home/username/Desktop/IDA/ feature_saving.db
 
 2. Using ML_detection.py to train and save model in the directory 'model' (file format: .h5)
 
@@ -115,31 +122,4 @@ response explaination:
 1. detection_result: {0,1| 0: not malware, 1: malware}
 2. classification_result: {malware family name or 'benign'}
 
-## Usage description
-There are 2 Restful APIs which are used to upload sample and lookup the analysis result 
-
-upload: upload sample to system
-
-report: lookup analysis result
-
-## Usage <!!! The server is not working for now. Please do not attempt to upload file>
-upload:
-curl -k https://52.247.210.51:20180/task/upload -F sampleFile=@<sample_path>
-
-report:
-curl –k https://52.247.210.51:20180/task/report/<sha256\>
-### Notice
-  sha256 is one of return results of upload
-
-## return example (JSON format)
-upload: {"status":"Success/Failed", "message":"error msg or success msg", "sha256":"<sha256_value>"}
-
-report: {"status":"Success/Failed", "detection":"True/False/None", "classification":"<malware family name\>/benign/None", ("message":"Failed msg")}
-### Notice
-  sha256 value exists only when success upload sample or repeated sample. Otherwise, it will be empty
-  
-  message (report) only exists when search analysis result failed. If success, it will not appear in response body 
-
-## Important reminder
-If you want to attempt our system, please contact us and attach your ip address for setting into valid user
 

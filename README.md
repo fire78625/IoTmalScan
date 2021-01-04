@@ -54,7 +54,7 @@ As the following figures shows, our models have great performance in detection a
 
 Operation System: Ubuntu 16.04 LTS Client (or at least Linux-based system recommended)
 
-System need the following dependencies and tools:
+System need the following dependencies and tools: [you can follow url or command to install]
 1. Python3 (version>= 3.5.2): https://www.python.org/
 2. Radare2: https://rada.re/r/
 3. elfutils: https://sourceware.org/elfutils/
@@ -62,7 +62,7 @@ System need the following dependencies and tools:
 5. Tensorflow: https://www.tensorflow.org/
 6. IDA pro: https://www.hex-rays.com/products/ida/support/download_freeware.shtml
 7. Scikit-learn: https://scikit-learn.org/stable/install.html
-8. sqlite3
+8. sqlite3 : pip3 install sqlite
 
 Notice:
 1. Your selected environment should own the GUI interface for the processing of IDA pro command. If there is no GUI, the system will encounter an error.

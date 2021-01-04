@@ -63,6 +63,7 @@ System need the following dependencies and tools: [you can follow url or command
 6. IDA pro: https://www.hex-rays.com/products/ida/support/download_freeware.shtml
 7. Scikit-learn: https://scikit-learn.org/stable/install.html
 8. sqlite3 : pip3 install sqlite
+9. numpy: pip3 install numpy
 
 Notice:
 1. Your selected environment should own the GUI interface for the processing of IDA pro command. If there is no GUI, the system will encounter an error.
@@ -72,7 +73,7 @@ Notice:
 
 1. You have to use Extract_feature.py to extract features from sample. Then in the execution process, program will save this features of sample into a database file(.db) which locates in 'database' directory. Please put the training samples into directory 'training_sample'. Besides, you have to execute label.py before Extract_feature.py to acquire the label of training samples for detection 
 
-#### Executing the following command to generate a detection label file [data format: csv, output: A file whose name is training_label.txt in IoTmalScan directory]
+#### Executing the following command to generate a detection label file [data format: csv, output: A file whose name is training_detection_label.txt in IoTmalScan directory]
 
 *`python3 label.py <malware_indicator> <sample_path>`*
 
@@ -84,14 +85,18 @@ sample_path: the (malware/benign) sample saving path
 
 #### Label of classification
 
-1. You have to download the reports of training samples from VirusTotal
-2. You have to filter the results of these three AV vendors: "BitDefender", "ESET-NOD32", and "MicroWorld-eScan" and decide the family name (=label of classification)
-3. The results should save as the format like 'samplename,familyname' for each sample in each line 
-4. The final result label file should put in the directory 'VTreport'
+1. You have to download the reports of training samples from VirusTotal, please use the format of filename: <hashvalue>.txt
+2. The final result label file should put in the directory 'VTreport'
+
+#### Execute the following command to generate a classification label file [filename: training_classification_label.txt]
+
+*`python3 analyze_virustotal_report.py`*
+
+!!! Notice for using newer samples in VirusTotal, we set a limit only parse the report of sample which was found after 2012. If you want to change this limit, please modify code directly
 
 #### Executing the following command [please execute program with root privilege to make sure tools has enough privilege]
 
-*`sudo python3 Extract_feature.py <tool_elfutiles_src_directory_path> <IDA_binary_idaq64_path> <features_storage_database_name> <classification_label_file_name>`*
+*`sudo python3 Extract_feature.py <tool_elfutiles_src_directory_path> <IDA_binary_idaq64_path> <features_storage_database_name>`*
 
 Ex: sudo python3 Extract_feature.py /home/username/Desktop/elfutils/ /home/username/Desktop/IDA/ feature_saving.db
 
@@ -109,9 +114,9 @@ Using elf_analysis_activate.py to generate testing result
 
 #### Executing the following command [please execute program with root privilege to make sure tools has enough privilege]
 
-*`sudo python3 elf_analysis_activate.py <sample_name(sha256_value)> <tool_elfutiles_src_directory_path> <IDA_binary_idaq64_path>`*
+*`sudo python3 elf_analysis_activate.py <sample_name(hashvalue.extname)> <tool_elfutiles_src_directory_path> <IDA_binary_idaq64_path>`*
 
-Ex: sudo python3 elf_analysis_activate.py Desktop/examplevalue Desktop/elfutils/src/ Desktop/IDA/
+Ex: sudo python3 elf_analysis_activate.py Desktop/examplevalue.elf Desktop/elfutils/src/ Desktop/IDA/
 
 response format: array [sha256_value, detection_result, classification_result]
 

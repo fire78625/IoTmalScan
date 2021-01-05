@@ -71,6 +71,10 @@ Notice:
 
 ### Training phase
 
+#### Training diagram
+
+![](https://github.com/fire78625/IoTmalScan/blob/master/result_showing/training_diagram.JPG)
+
 1. You have to use Extract_feature.py to extract features from sample. Then in the execution process, program will save this features of sample into a database file(.db) which locates in 'database' directory. Please put the training samples into directory 'training_sample'. Besides, you have to execute label.py before Extract_feature.py to acquire the label of training samples for detection 
 
 #### Executing the following command to generate a detection label file [data format: csv, output: A file whose name is training_detection_label.txt in IoTmalScan directory]

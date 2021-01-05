@@ -6,7 +6,7 @@ Author: Owen Chen, Chin-Wei Tien
 
 (1) Source code(/source_code)
 
-(2) Example sample for testing(/test_sample)
+(2) Example sample for testing(/test_sample) : Valid sample will be put into this directory
 
 (3) Figure of detection and classification performance(/result_showing)
 

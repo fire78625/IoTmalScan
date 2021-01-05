@@ -102,11 +102,15 @@ Ex: sudo python3 Extract_feature.py /home/username/Desktop/elfutils/ /home/usern
 
 2. Using ML_detection.py to train and save model in the directory 'model' (file format: .h5)
 
-#### Executing the following command to train and save model
+#### Executing the following command to train and save model [model will save in directory 'model', model names are detection_model.h5 and classification_model.h5]
 
 *`python3 ML_detection.py <features_storage_database_name>`*
 
 Ex: python3 ML_detection.py feature_saving.db
+
+*`python3 ML_classification.py <features_storage_database_name>`*
+
+Ex: python3 ML_classification.py feature_saving.db
 
 ### Testing phase
 
